@@ -1,21 +1,23 @@
-* {
-margin: 0;
-padding: 0;
+body{
+	background: #f9e933;
+	
 }
-nav {
-float: left;
-background:darkgray;
+
+
+header, main,footer {
+	min-width: 855px;
 }
+
+header .container, main .container, footer .container {
+max-width: 855px;
+margin: auto;
+}
+
+header {
+	background: white;
+}
+
 main {
-/*width: 500px;*/
-overflow:auto;
-background:lightgray;
-}
-footer {
-background:gray;
-clear:both;
-}
-main p {
-padding: 10px;
-float:right;
+
+	background: white;
 }
