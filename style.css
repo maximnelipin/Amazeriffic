@@ -1,0 +1,21 @@
+* {
+margin: 0;
+padding: 0;
+}
+nav {
+float: left;
+background:darkgray;
+}
+main {
+/*width: 500px;*/
+overflow:auto;
+background:lightgray;
+}
+footer {
+background:gray;
+clear:both;
+}
+main p {
+padding: 10px;
+float:right;
+}
