@@ -10,14 +10,18 @@ h1{
 h2{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.3em;
+	
 }
 h3{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.2em;
+	padding-top:10px;
+	padding-bottom: 5px
 }
 h5{
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 1.1em;
+	padding-bottom: 20px;
 }
 a{
 	color: red;
@@ -35,8 +39,14 @@ main ul {
 }
 
 main ul li {
-	padding-top: 10px;
+	padding-top: 7px;
 
+}
+
+main p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
 }
 hr {
 	padding: 0;
@@ -97,6 +107,7 @@ main .rightcolumn{
 footer .contact{
 	float: left;
 	width: 570px;
+	
 }
 
 footer .sitemap{
@@ -111,4 +122,9 @@ footer .sitemap .leftcolumn{
 footer .sitemap .rightcolumn{
 	float: right;
 	width: 50%;
+}
+
+.logo {
+	font-style:italic;
+
 }
