@@ -1,69 +1,35 @@
 body{
 	background: #f9e933;
 	font-family: 'Roboto', sans-serif;
-	font-size: 100%;
 }
 h1{
 	font-family: 'Ubuntu', sans-serif;
-	font-size: xx-large;
+	font-size: 3em;
 }
 h2{
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 1.3em;
+	font-size: 2em;
 	
 }
 h3{
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 1.2em;
-	padding-top:10px;
-	padding-bottom: 5px
+	font-size: 1.7em;
+	
 }
 h5{
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 1.1em;
-	padding-bottom: 20px;
+	font-size: 1.3em;
+	margin-bottom: 20px;
 }
 a{
 	color: red;
 	text-decoration: none;
-}
-a:hover{
-	color: darkblue;
-	text-decoration: underline;
-}
-
-main ul {
-	padding: 15px 7px 15px 7px;
-	
-	background: #eee;
-	border-radius:0px 10px 10px 10px;
-
-}
-
-main ul li {
-	padding-top: 7px;
-	border-radius:10px;
-	margin-bottom: 5px;
-	padding: 5px;
-	background: #fff;
-}
-
-main p {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	
-}
-hr {
-	padding: 0;
-	margin: 0;
 	
 }
 
 header, main,footer {
 	min-width: 855px;
-	padding-left: 40px;
-	padding-bottom: 20px;
-	padding-top: 30px;
+	
 }
 
 header .container, main .container, footer .container {
@@ -75,39 +41,58 @@ header .container, main .container, footer .container {
 header {
 	background: white;
 	overflow: auto;
-	padding-top: 10px;
+	padding: 25px 0px 25px 40px;
+	border-bottom: 1px solid #ddd;
 }
-
-main {
-
-	background: white;
-	overflow: auto;
-}
-
-
-
 header .leftcolumn {
 	float: left;
 	width: 570px;
 	
 }
 header .rightcolumn {
-	float: right;
-	
-	width: 285px;
-	
+	float: right;	
+	width: 285px;	
+}
+
+main {
+	padding: 40px;
+	background: #fff;
+	overflow: auto;
+}
+main .content {
+	padding: 30px 10px 30px 10px;
+	background: #eee;
+	border-radius:0px 10px 10px 10px;
 	
 }
 
-main .leftcolumn{
-	float: left;
-	width: 570px;
+main .content li {
+	padding: 3px;
+	border-radius:10px;
+	margin-bottom: 10px;
+	padding: 5px;
+	background: #eff;
 }
 
-main .rightcolumn{
-	float: right;
-	width: 285px;
+main .content input{
+	width:80%;
+	height:25px;
+	font-size: 1.2em;
+	border-radius:5px;
 }
+
+main .content button {
+	font-weight: bold;
+	padding: 0 3px 0 3px;
+	border-radius: 5px;
+	color: ivory;
+	background: green;
+	cursor: pointer;
+	font-size: 1.4em;
+	margin-left: 5px;
+
+}
+
 
 .tabs a span {
 	display: inline-block;
@@ -121,27 +106,40 @@ main .rightcolumn{
 .tabs a span.active {
 	background: #eee;
 }
+
+footer {
+	border-top:1px solid;
+	padding:40px 0px 20px 40px;
+}
+
 footer .contact{
 	float: left;
 	width: 570px;
 	
 }
-
+footer .contact p:nth-child(2) {
+	 
+	 font-style: italic;
+}
 footer .sitemap{
 	float: right;
 	width: 285px;
-	max-height: 100px;
+	
 }
+footer ul {
+    width: 100px;
+}
+footer li {
+    list-style: none;
+}
+
+
 footer .sitemap .leftcolumn{
 	float: left;
-	width: 50%;
+	
 }
 footer .sitemap .rightcolumn{
 	float: right;
-	width: 50%;
+	
 }
 
-.logo {
-	font-style:italic;
-
-}

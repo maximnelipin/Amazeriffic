@@ -19,22 +19,39 @@ var main = function () {
 			$element.addClass("active");
 			$("main .content").empty();
 			if ($element.parent().is(":nth-child(1)")){
+				//новые задания в начале списка
 				$content=$("<ul>");
 					toDos.reduceRight(function (a,todo){
 						$content.append($("<li>").text(todo));
 					},0);
-					$("main .content").append($content);
 					}
 				else if ($element.parent().is(":nth-child(2)")){
+					//Старые задания в начале списка
 					$content=$("<ul>");
 					toDos.forEach(function (todo){
 						$content.append($("<li>").text(todo));
 					});
-					$("main .content").append($content);
+					
 				}
 				else if ($element.parent().is(":nth-child(3)")) {
-						console.log("Щелчок на третьей вкладке!");
+					//на 3 вкладке формируем поле и кнопку для добавления заданий
+						var $input=$("<input/>",
+						{
+							type:"text",							
+						});
+						var $button=$("<button/>",
+							{
+							text:"+",
+							click: function(){
+								if ($input.val()!=="") {
+									toDos.push($input.val());
+									$input.val("");
+								}
+							}
+						});
+					$content=$("<div>").append($input).append($button);
 					}
+			$("main .content").append($content);
 			return false;
 		});
 			
