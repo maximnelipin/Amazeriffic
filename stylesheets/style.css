@@ -1,0 +1,147 @@
+body{
+	background: #f9e933;
+	font-family: 'Roboto', sans-serif;
+	font-size: 100%;
+}
+h1{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: xx-large;
+}
+h2{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.3em;
+	
+}
+h3{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.2em;
+	padding-top:10px;
+	padding-bottom: 5px
+}
+h5{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.1em;
+	padding-bottom: 20px;
+}
+a{
+	color: red;
+	text-decoration: none;
+}
+a:hover{
+	color: darkblue;
+	text-decoration: underline;
+}
+
+main ul {
+	padding: 15px 7px 15px 7px;
+	
+	background: #eee;
+	border-radius:2px;
+
+}
+
+main ul li {
+	padding-top: 7px;
+	border-radius:10px;
+	margin-bottom: 5px;
+	padding: 5px;
+	background: #fff;
+}
+
+main p {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+}
+hr {
+	padding: 0;
+	margin: 0;
+	
+}
+
+header, main,footer {
+	min-width: 855px;
+	padding-left: 40px;
+	padding-bottom: 20px;
+	padding-top: 30px;
+}
+
+header .container, main .container, footer .container {
+	max-width: 855px;
+	margin: 0;
+	
+}
+
+header {
+	background: white;
+	overflow: auto;
+	padding-top: 10px;
+}
+
+main {
+
+	background: white;
+	overflow: auto;
+}
+
+
+
+header .leftcolumn {
+	float: left;
+	width: 570px;
+	
+}
+header .rightcolumn {
+	float: right;
+	
+	width: 285px;
+	
+	
+}
+
+main .leftcolumn{
+	float: left;
+	width: 570px;
+}
+
+main .rightcolumn{
+	float: right;
+	width: 285px;
+}
+
+.tabs a span {
+	display: inline-block;
+	border-radius: 5px 5px 0 0;
+	width: 100px;
+	margin-right: 10px;
+	text-align: center;
+	background: #ddd;
+	padding: 5px;
+}
+.tabs a span.active {
+	background: #eee;
+}
+footer .contact{
+	float: left;
+	width: 570px;
+	
+}
+
+footer .sitemap{
+	float: right;
+	width: 285px;
+	max-height: 100px;
+}
+footer .sitemap .leftcolumn{
+	float: left;
+	width: 50%;
+}
+footer .sitemap .rightcolumn{
+	float: right;
+	width: 50%;
+}
+
+.logo {
+	font-style:italic;
+
+}
