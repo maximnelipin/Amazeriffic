@@ -5,6 +5,7 @@ var main = function (toDoObjects) {
 		return toDo.description;
 		
 	});
+	
 	//var toDos = [
 			//	"Закончить писать эту книгу",
 			//	"Вывести Грейси на прогулку в парк",
@@ -38,65 +39,85 @@ var main = function (toDoObjects) {
 					});
 					
 				}
+				//теги заданий
 				else if ($element.parent().is(":nth-child(3)")){
-					var organizedByTag = [
-							{
-							"name": "покупки",
-							"toDos": ["Купить продукты"]
-							},
-							{
-							"name": "рутина",
-							"toDos": ["Купить продукты", "Вывести Грейси на прогулку в парк"]
-							},
-							{
-							"name": "писательство",
-							"toDos": ["Сделать несколько новых задач", "Закончить писать книгу"]
-							},
-							{
-
-							"name": "работа",
-									"toDos":  ["Сделать  несколько  новых  задач",  "Подготовиться  к  лекции в понедельник","Ответить на электронные письма", "Закончить писать книгу"]
-							},
-							{
-							"name": " преподавание",
-							"toDos": ["Подготовиться к лекции в понедельник"]
-							},
-							{
-							"name": "питомцы",
-							"toDos": ["Вывести Грейси на прогулку в парк "]
-							}
-						]
-						organizedByTag.forEach(function (tag) {
-							var $tagName=$("<h3/>").text(tag.name),
-								$content=$("<ul/>");
-							tag.toDos.forEach(function(description){
-								var $li=$("<li/>").text(description);
-								$content.append($li);								
+					//создаём пустой массив для тегов
+						var tags=[];
+						//перебираем все задачи
+						toDoObjects.forEach(function (toDo){
+							//перебираем все теги
+							toDo.tags.forEach(function (tag){
+								//если такого тега у нас нет,то добавляем его в массив
+								if(tags.indexOf(tag)===-1){
+									tags.push(tag);
+								}
 							});
-							$("main .content").append($tagName).append($content);
-							
 						});
+					  var tagObjects=tags.map(function (tag){
+							//массив для задач, которые содержат этот тег
+							var toDosWithTag=[];
+							toDoObjects.forEach(function(toDo){
+								//проверяем, есть ли у задачи текущий тег
+								if(toDo.tags.indexOf(tag)!==-1){
+									toDosWithTag.push(toDo.description);
+								}
+							});
+							//создаём объект с тегом и списком задач, его содержащим
+							return {"name":tag, "toDos": toDosWithTag};
+					  });  
+					  //формируем html-код для вывода тегов и заданий
+					tagObjects.forEach(function (tag) {
+						var $tagName=$("<h3/>").text(tag.name),
+							$content=$("<ul/>");
+						tag.toDos.forEach(function(description){
+							var $li=$("<li/>").text(description);
+							$content.append($li);								
+						});
+						$("main .content").append($tagName).append($content);
 						
-						
-				
+					});			
 				}
 				else if ($element.parent().is(":nth-child(4)")) {
-					//на 3 вкладке формируем поле и кнопку для добавления заданий
+					//на  вкладке формируем поле и кнопку для добавления заданий
 						var $input=$("<input/>",
 						{
-							type:"text",							
+							type:"text",
+							class:"description",
+						});
+						var $inputLabel=$("<p/>",
+						{
+							text:"Описание",							
+						});
+						var $tagInput=$("<input/>",
+						{
+							type:"text",
+							class:"tags",
+						});
+						var $tagLabel=$("<p/>",
+						{
+							text:"Теги",							
 						});
 						var $button=$("<button/>",
 							{
 							text:"+",
 							click: function(){
-								if ($input.val()!=="") {
-									toDos.push($input.val());
+								if ($input.val()!=="" && $tagInput.val()!=="" ) {
+									var description=$input.val(),
+										tags=$tagInput.val().split(",");
+									toDoObjects.push({"description":description, "tags":tags});
+									toDos=toDoObjects.map(function(toDo){
+										return toDo.description;										
+									});
 									$input.val("");
+									$tagInput.val("");
 								}
 							}
 						});
-					$content=$("<div>").append($input).append($button);
+					$content = $("<div>").append($inputLabel)
+										.append($input)
+										.append($tagLabel)
+										.append($tagInput)
+										.append($button);
 					}
 			$("main .content").append($content);
 			return false;

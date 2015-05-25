@@ -103,6 +103,13 @@ main .content button {
 
 }
 
+main .content p {
+    margin: 30px 0 0 0;
+}
+
+main .content p:first-child {
+    margin-top: 10px;
+}
 
 .tabs a span {
 	display: inline-block;
